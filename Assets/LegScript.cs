@@ -72,7 +72,7 @@ public class LegScript : MonoBehaviour {
 
 		//double gammaInRadians = Math.PI * (shinRotX / 180.0);
 		//float cosGamma = (float) Math.Sin (gammaInRadians);
-		float toeForce = 0.001f;//* m3 * g;
+		float toeForce = m3 * g;
 
 		print ("kneeForce = " + kneeForce + ", ankleForce = " + ankleForce + ", toeForce = " + toeForce);
 
