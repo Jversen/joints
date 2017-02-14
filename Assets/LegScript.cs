@@ -11,6 +11,7 @@ public class LegScript : MonoBehaviour {
 	public Rigidbody knee;
 	public Rigidbody shin;
 	public Rigidbody ankle;
+	public Rigidbody toe;
 
 	public Transform parentObject;
 	private float parentRotX;
@@ -24,6 +25,7 @@ public class LegScript : MonoBehaviour {
 	private float g;
 	private float m1;
 	private float m2;
+	private float m3;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +39,7 @@ public class LegScript : MonoBehaviour {
 		g = Physics.gravity.y;
 		m1 = head.mass;
 		m2 = head.mass + thigh.mass;
+		m3 = head.mass + thigh.mass + shin.mass;
 
 		print ("parentRotX: " + parentRotX + ", parentRotY: " + parentRotY + ", parentRotZ: " + parentRotZ );
 		
@@ -67,12 +70,16 @@ public class LegScript : MonoBehaviour {
 		float cosBeta = (float) Math.Sin (betaInRadians);
 		float ankleForce = m2 * g * cosBeta;
 
-		print ("kneeForce = " + kneeForce + ", ankleForce = " + ankleForce);
+		//double gammaInRadians = Math.PI * (shinRotX / 180.0);
+		//float cosGamma = (float) Math.Sin (gammaInRadians);
+		float toeForce = 0.001f;//* m3 * g;
+
+		print ("kneeForce = " + kneeForce + ", ankleForce = " + ankleForce + ", toeForce = " + toeForce);
 
 
 		knee.AddRelativeForce (new Vector3 (0, 0, kneeForce));
 		ankle.AddRelativeForce (new Vector3 (0, 0, -ankleForce));
-
+		toe.AddRelativeForce(new Vector3 (0, toeForce, 0));
 
 
 		//ankle.AddRelativeForce (new Vector3 (0, 0, 100));
