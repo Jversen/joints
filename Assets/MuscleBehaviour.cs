@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MuscleBehaviour : MonoBehaviour {
-    public Rigidbody rightFrontUpperHamstring, rightFrontLowerHamstring;
+    public Rigidbody rightFrontUpperHamstring, rightFrontLowerHamstring, rightBackUpperHamstring, rightBackLowerHamstring, 
+        leftFrontUpperHamstring, leftFrontLowerHamstring, leftBackUpperHamstring, leftBackLowerHamstring;
+    public Rigidbody rightFrontUpperChest, rightFrontLowerChest, rightBackUpperChest, rightBackLowerChest,
+        leftFrontUpperChest, leftFrontLowerChest, leftBackUpperChest, leftBackLowerChest;
+    public Rigidbody rightFrontUpperGluteus, rightFrontLowerGluteus, rightBackUpperGluteus, rightBackLowerGluteus,
+        leftFrontUpperGluteus, leftFrontLowerGluteus, leftBackUpperGluteus, leftBackLowerGluteus;
+    public Rigidbody rightFrontUpperGastro, rightFrontLowerGastro, rightBackUpperGastro, rightBackLowerGastro,
+        leftFrontUpperGastro, leftFrontLowerGastro, leftBackUpperGastro, leftBackLowerGastro;
+    public Rigidbody rightFrontUpperTibialis, rightFrontLowerTibialis, rightBackUpperTibialis, rightBackLowerTibialis,
+        leftFrontUpperTibialis, leftFrontLowerTibialis, leftBackUpperTibialis, leftBackLowerTibialis;
     public float force;
 	// Use this for initialization
 	void Start () {
