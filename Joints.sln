@@ -1,7 +1,7 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joints", "Assembly-CSharp.csproj", "{575EB525-8493-574E-B38B-1AC553D4E1CF}"
+# Visual Studio 2008
+
+Project("{D66D63F1-6CE6-3361-E58B-99294218A3C9}") = "Joints", "Assembly-CSharp.csproj", "{575EB525-8493-574E-B38B-1AC553D4E1CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
