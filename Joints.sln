@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{D66D63F1-6CE6-3361-E58B-99294218A3C9}") = "Joints", "Assembly-CSharp.csproj", "{575EB525-8493-574E-B38B-1AC553D4E1CF}"
+Project("{D97DCFFD-67EC-A725-5CA5-14E4084B746E}") = "joints", "Assembly-CSharp.csproj", "{155F000A-A52B-E067-3437-B74AA86484B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{575EB525-8493-574E-B38B-1AC553D4E1CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{575EB525-8493-574E-B38B-1AC553D4E1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{575EB525-8493-574E-B38B-1AC553D4E1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{575EB525-8493-574E-B38B-1AC553D4E1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{155F000A-A52B-E067-3437-B74AA86484B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155F000A-A52B-E067-3437-B74AA86484B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155F000A-A52B-E067-3437-B74AA86484B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155F000A-A52B-E067-3437-B74AA86484B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

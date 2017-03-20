@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
 public class MuscleBehaviour : MonoBehaviour {
 
     public Rigidbody body, rightFrontFoot, rightBackFoot, leftFrontFoot, leftBackFoot;
@@ -67,6 +68,7 @@ public class MuscleBehaviour : MonoBehaviour {
     // Om det istället hade stått leftBackGluteus.MoveMuscle(2000, false) hade leftBackGluteus sträckts ut med kraft 2000.
     // Använd bara positiva krafter, om du vill ha en negativ kraft, använd den motsatta boolean.
 	void Update () {
+		
         balance();
     }
     // Ett försök att balansera. Den funkar bättre desto tyngre fötterna är.
@@ -154,4 +156,4 @@ public class MuscleGroup
         backLeft.MoveMuscle(force, contract);
     }
 }
-
+*/
