@@ -88,6 +88,7 @@ public class Init : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        /*
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("obj"))
         {
             Rigidbody rigid = obj.GetComponent<Rigidbody>();
@@ -96,6 +97,7 @@ public class Init : MonoBehaviour {
                 obj.SetActive(false);
             }
         }
+        */
         frames++;
         if ((Time.fixedTime - prevTime)>12 && !doneBool)
         {

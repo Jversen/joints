@@ -20,13 +20,21 @@ public class MuscleBehaviour : MonoBehaviour
     public Rigidbody rightFrontUpperTibialis, rightFrontLowerTibialis, rightBackUpperTibialis, rightBackLowerTibialis,
         leftFrontUpperTibialis, leftFrontLowerTibialis, leftBackUpperTibialis, leftBackLowerTibialis;
 
+    public Rigidbody rightFrontUpperAbductor, rightFrontLowerAbductor, rightBackUpperAbductor, rightBackLowerAbductor,
+        leftFrontUpperAbductor, leftFrontLowerAbductor, leftBackUpperAbductor, leftBackLowerAbductor;
+
+    public Rigidbody rightFrontUpperAdductor, rightFrontLowerAdductor, rightBackUpperAdductor, rightBackLowerAdductor,
+        leftFrontUpperAdductor, leftFrontLowerAdductor, leftBackUpperAdductor, leftBackLowerAdductor;
+
     private Muscle rightFrontHamstring, rightBackHamstring, leftFrontHamstring, leftBackHamstring, rightFrontChest, rightBackChest, leftFrontChest, leftBackChest,
         rightFrontGluteus, rightBackGluteus, leftFrontGluteus, leftBackGluteus, rightFrontGastro, rightBackGastro, leftFrontGastro, leftBackGastro,
-        rightFrontTibialis, rightBackTibialis, leftFrontTibialis, leftBackTibialis;
+        rightFrontTibialis, rightBackTibialis, leftFrontTibialis, leftBackTibialis, rightFrontAbductor, rightBackAbductor, leftFrontAbductor, leftBackAbductor, 
+        rightFrontAdductor, rightBackAdductor, leftFrontAdductor, leftBackAdductor;
 
-    private MuscleGroup hamstring, chest, gluteus, gastro, tibialis;
+    private MuscleGroup hamstring, chest, gluteus, gastro, tibialis, abductor, adductor;
 
-    public float a1, w1, a2, w2, a3, w3, a4, w4, a5, w5, a6, w6, a7, w7, a8, w8, a9, w9, a10, w10, a11, w11, a12, w12, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12;
+    public float a1, w1, a2, w2, a3, w3, a4, w4, a5, w5, a6, w6, a7, w7, a8, w8, a9, w9, a10, w10, a11, w11, a12, w12, a13, w13, a14, w14, a15, w15, a16, w16, 
+        f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16;
     // Use this for initialization
     void Start()
     {
@@ -56,17 +64,30 @@ public class MuscleBehaviour : MonoBehaviour
         leftFrontTibialis = new Muscle(leftFrontUpperTibialis, leftFrontLowerTibialis);
         leftBackTibialis = new Muscle(leftBackUpperTibialis, leftBackLowerTibialis);
 
+        rightFrontAbductor = new Muscle(rightFrontUpperAbductor, rightFrontLowerAbductor);
+        rightBackAbductor = new Muscle(rightBackUpperAbductor, rightBackLowerAbductor);
+        leftFrontAbductor = new Muscle(leftFrontUpperAbductor, leftFrontLowerAbductor);
+        leftBackAbductor = new Muscle(leftBackUpperAbductor, leftBackLowerAbductor);
+
+        rightFrontAdductor = new Muscle(rightFrontUpperAdductor, rightFrontLowerAdductor);
+        rightBackAdductor = new Muscle(rightBackUpperAdductor, rightBackLowerAdductor);
+        leftFrontAdductor = new Muscle(leftFrontUpperAdductor, leftFrontLowerAdductor);
+        leftBackAdductor = new Muscle(leftBackUpperAdductor, leftBackLowerAdductor);
+
         hamstring = new MuscleGroup(rightFrontHamstring, rightBackHamstring, leftFrontHamstring, leftBackHamstring);
         chest = new MuscleGroup(rightFrontChest, rightBackChest, leftFrontChest, leftBackChest);
         gluteus = new MuscleGroup(rightFrontGluteus, rightBackGluteus, leftFrontGluteus, leftBackGluteus);
         gastro = new MuscleGroup(rightFrontGastro, rightBackGastro, leftFrontGastro, leftBackGastro);
         tibialis = new MuscleGroup(rightFrontTibialis, rightBackTibialis, leftFrontTibialis, leftBackTibialis);
+        abductor = new MuscleGroup(rightFrontAbductor, rightBackAbductor, leftFrontAbductor, leftBackAbductor);
+        adductor = new MuscleGroup(rightFrontAdductor, rightBackAdductor, leftFrontAdductor, leftBackAdductor);
 
     }
-    // Skriv t.ex rightBackChest.MoveMuscle(1000, true) om du vill kontrahera rightBackChest med kraft 1000.
-    // Om det istället hade stått leftBackGluteus.MoveMuscle(2000, false) hade leftBackGluteus sträckts ut med kraft 2000.
+    // Skriv t.ex rightBackChest.MoveMuscle(1000) om du vill kontrahera rightBackChest med kraft 1000.
+    // Om det istället hade stått leftBackGluteus.MoveMuscle(-2000) hade leftBackGluteus sträckts ut med kraft 2000.
     void Update()
     {
+	/*
         float t = Time.fixedTime;
         float x1 = a1 * (Mathf.Sin(w1 * t + f1));
         float x2 = a2 * (Mathf.Sin(w2 * t + f2));
@@ -80,6 +101,10 @@ public class MuscleBehaviour : MonoBehaviour
         float x10 = a10 * (Mathf.Sin(w10 * t + f10));
         float x11 = a11 * (Mathf.Sin(w11 * t + f11));
         float x12 = a12 * (Mathf.Sin(w12 * t + f12));
+        float x13 = a13 * (Mathf.Sin(w13 * t + f13));
+        float x14 = a14 * (Mathf.Sin(w14 * t + f14));
+        float x15 = a15 * (Mathf.Sin(w15 * t + f15));
+        float x16 = a16 * (Mathf.Sin(w16 * t + f16));
 
         MoveHip(x1, "right_front");
         MoveHip(x2, "right_back");
@@ -95,6 +120,14 @@ public class MuscleBehaviour : MonoBehaviour
         MoveKnee(x10, "right_back");
         MoveKnee(x11, "left_front");
         MoveKnee(x12, "left_back");
+
+        MoveAdductor(x13, "right_front");
+        MoveAdductor(x14, "right_back");
+        MoveAdductor(x15, "left_front");
+        MoveAdductor(x16, "left_back");	
+	*/
+	rightFrontChest.MoveMuscle(a1);
+	rightFrontHamstring.MoveMuscle(w1);
     }
 
     private void MoveHip(float force, string side)
@@ -141,6 +174,53 @@ public class MuscleBehaviour : MonoBehaviour
             else
             {
                 leftBackChest.MoveMuscle(force);
+            }
+        }
+    }
+    private void MoveAdductor(float force, string side)
+    {
+        if (side == "right_front")
+        {
+            if (force < 0)
+            {
+                rightFrontAbductor.MoveMuscle(-force);
+            }
+            else
+            {
+                rightFrontAdductor.MoveMuscle(force);
+            }
+        }
+        else if (side == "right_back")
+        {
+            if (force < 0)
+            {
+                rightBackAbductor.MoveMuscle(-force);
+            }
+            else
+            {
+                rightBackAdductor.MoveMuscle(force);
+            }
+        }
+        else if (side == "left_front")
+        {
+            if (force < 0)
+            {
+                leftFrontAbductor.MoveMuscle(-force);
+            }
+            else
+            {
+                leftFrontAdductor.MoveMuscle(force);
+            }
+        }
+        else if (side == "left_back")
+        {
+            if (force < 0)
+            {
+                leftBackAbductor.MoveMuscle(-force);
+            }
+            else
+            {
+                leftBackAdductor.MoveMuscle(force);
             }
         }
     }
