@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+/*
 public class LegScript : MonoBehaviour {
 
 
@@ -29,8 +29,11 @@ public class LegScript : MonoBehaviour {
 	private float ms;
 	private float mf;
 
+	int p;
+
 	// Use this for initialization
 	void Start () {
+
 		vectorX = new Vector3 (1, 0, 0);
 		vectorY = new Vector3 (0, 1, 0);
 		vectorZ = new Vector3 (0, 0, 1);
@@ -47,9 +50,11 @@ public class LegScript : MonoBehaviour {
 		mf = foot.mass;
 
 		print ("parentRotX: " + parentRotX + ", parentRotY: " + parentRotY + ", parentRotZ: " + parentRotZ );
+
+		p = 0;
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -57,21 +62,21 @@ public class LegScript : MonoBehaviour {
 		float thighRotY = thigh.rotation.eulerAngles.y - parentRotY;
 		float thighRotZ = thigh.rotation.eulerAngles.z - parentRotZ;
 		if (thighRotX > 180) {
-			thighRotX = thighRotX - 360;
+			thighRotX = thighRotX - 260;
 		}
 
 		float shinRotX = shin.rotation.eulerAngles.x - parentRotX;
 		float shinRotY = shin.rotation.eulerAngles.y - parentRotY;
 		float shinRotZ = shin.rotation.eulerAngles.z - parentRotZ;
 		if (shinRotX > 180) {
-			shinRotX = shinRotX - 360;
+			shinRotX = shinRotX - 260;
 		}
 
 		float footRotX = foot.rotation.eulerAngles.x - parentRotX;
 		float footRotY = foot.rotation.eulerAngles.y - parentRotY;
 		float footRotZ = foot.rotation.eulerAngles.z - parentRotZ;
 		if (footRotX > 180) {
-			footRotX = footRotX - 360;
+			footRotX = footRotX - 260;
 		}
 
 		//Cos(90 - a) = Sin(a) 
@@ -95,3 +100,4 @@ public class LegScript : MonoBehaviour {
 		toe.AddRelativeForce(new Vector3 (0, toeForce, 0));
 	}
 }
+*/
